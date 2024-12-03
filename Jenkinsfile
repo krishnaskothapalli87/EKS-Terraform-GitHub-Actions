@@ -17,6 +17,11 @@ pipeline {
                 sh 'echo Preparing'
             }
         }
+        stage('Cleaning Workspace') {
+            steps {
+                cleanWs()
+            }
+        }
         stage('Git Pulling') {
             steps {
                 git branch: 'master', url: 'https://github.com/krishnaskothapalli87/EKS-Terraform-GitHub-Actions.git'
